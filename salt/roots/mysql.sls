@@ -5,6 +5,7 @@ mysql:
 dbrw:
   mysql_user.present:
     - host: '%'
+    - host: 'localhost'
     - password: "changeme"
     - connection_user: root
     - connection_charset: utf8
@@ -20,3 +21,11 @@ dbrw_shopware:
     - database: shopware.*
     - user: dbrw
     - host: '%'
+    - host: 'localhost'
+
+update_my_cnf:
+  file:
+    - name: /etc/mysql/my.cnf
+    - replace
+    - pattern: 'bind-address.*'
+    - repl: '#bind-address   		= 127.0.0.1'

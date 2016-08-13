@@ -33,3 +33,4 @@ update_upload_filesize:
       - xdebug.remote_connect_back=On
       - xdebug.remote_port=9000
       - xdebug.idekey=PHPSTORM
+      - xdebug.max_nesting_level=500
