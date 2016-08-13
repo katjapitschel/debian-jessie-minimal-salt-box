@@ -4,7 +4,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "danher/debian-jessie-minimal-salt"
   config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.synced_folder "share", "/media/share"
+  config.vm.synced_folder "share", "/media/share", owner: "www-data", group: "www-data"
   config.vm.synced_folder "salt/roots", "/srv/salt"
   
   config.vm.provider "virtualbox" do |vb|
